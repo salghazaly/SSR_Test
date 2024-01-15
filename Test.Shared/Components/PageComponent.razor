@@ -1,0 +1,15 @@
+﻿@page "/test"
+
+<h3>@pLabel</h3>
+
+
+<button class="btn btn-primary" @onclick="render"> Test Prerender </button>
+@code {
+    public string pLabel { get; set; } = "Test Page ...... ";
+    private void render()
+    {
+        pLabel = $"Test Page ...... {DateTime.Now.ToString()}";
+
+        StateHasChanged();
+    }
+}
